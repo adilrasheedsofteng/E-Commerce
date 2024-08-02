@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/admin.css" />
+    <!-- Linear Chart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="sidebar">
+        <a href="#Dashboard"><span><i class="fa-regular fa-handshake pe-1"></i></span>Dashboard</a>
+        <a href="#Customer Managment"><span><i class="fa-regular fa-handshake pe-1"></i></span>Customer Managment</a>
+        <a href="#Loyalty Managment"><span><i class="fa-regular fa-heart pe-1"></i></span>Loyalty Managment</a>
+        <a href="#Order Managment"><span><i class="fa-solid fa-cart-shopping pe-1"></i></span>Order Managment</a>
+        <a href="#Expense Managment"><span><i class="fa-solid fa-file-invoice pe-1"></i></span>Expense Managment</a>
+      </div>
+      <!-- <div class="sidenav">
+        <a href="#Dashboard"><span><i class="fa-regular fa-handshake pe-1"></i></span>Dashboard</a>
+        <a href="#Customer Managment"><span><i class="fa-regular fa-handshake pe-1"></i></span>Customer Managment</a>
+        <a href="#Loyalty Managment"><span><i class="fa-regular fa-heart pe-1"></i></span>Loyalty Managment</a>
+        <a href="#Order Managment"><span><i class="fa-solid fa-cart-shopping pe-1"></i></span>Order Managment</a>
+        <a href="#Expense Managment"><span><i class="fa-solid fa-file-invoice pe-1"></i></span>Expense Managment</a>
+      </div> -->
+      
+      <div class="content d-flex p-5">
+        <canvas id="myChart" style="width:100%;max-width:500px;"></canvas>
+        <canvas id="barCharts" style="width:100%;max-width:500px;"></canvas>
+      </div>
+      <div class="d-flex main-card-div">
+        <div class="card">
+          <div class="h2">6</div>
+          <div class="h2">Totall Users</div>
+        </div>
+        <div class="card">
+          <div class="h2">6</div>
+          <div class="h2 ">Totall Users</div>
+        </div>
+        <div class="card">
+          <div class="h2">6</div>
+          <div class="h2">Totall Users</div>
+        </div>
+        <div class="card">
+          <div class="h2">6</div>
+          <div class="h2">Totall Users</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Linear Chart -->
+
+<script>
+const xValues = [];
+const yValues = [];
+generateData("x * 2 + 7", 0, 10, 0.5);
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      pointRadius: 1,
+      borderColor: "rgba(255,0,0,0.5)",
+      data: yValues
+    }]
+  },    
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "y = x * 2 + 7",
+      fontSize: 16
+    }
+  }
+});
+function generateData(value, i1, i2, step = 1) {
+  for (let x = i1; x <= i2; x += step) {
+    yValues.push(eval(value));
+    xValues.push(x);
+  }
+}
+</script>
+
+
+<script>
+  const xValue = ["Italy", "France", "Spain", "USA", "Argentina"];
+  const yValue = [55, 49, 44, 24, 15];
+  const barColors = ["red", "green","blue","orange","brown"];
+  
+  new Chart("barCharts", {
+    type: "bar",
+    data: {
+      labels: xValue,
+      datasets: [{
+        backgroundColor: barColors,
+        data: yValue
+      }]
+    },
+    options: {
+      legend: {display: false},
+      title: {
+        display: true,
+        text: "World Wine Production 2018"
+      }
+    }
+  });
+  </script>
+  </body>
+</html>
