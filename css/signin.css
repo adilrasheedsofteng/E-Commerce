@@ -1,0 +1,81 @@
+.form{
+    margin-top: 60px;
+}
+.inputField{
+    /* width: 200px; */
+    height: 40px;
+    border-color:#32373a;
+    border-radius:10px;
+    outline: none;
+}
+.inputField:hover{
+    border-color:#ffc715;
+}
+.inputField:focus{
+    border-color:#ffc715;
+    box-shadow:none;
+}
+.label{
+    /* width: 400px; */
+    /* height: 40px; */
+    padding-top: 6px;
+}
+.text_area{
+    border-color:#32373a;
+    border-radius:10px;
+    outline: none;
+}
+.text_area:hover{
+    border-color:#ffc715;
+}
+.text_areaield:focus{
+    border-color:#ffc715;
+    box-shadow:none;
+}
+.customBtn {
+    font-size: 15px;
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px;
+    color: #ffffff;
+    border-color: #32373a;
+    background: #32373a;
+    border-radius: 10px;
+    border: none;
+
+ }
+ .customBtn:hover {
+    background: #ffc715;
+    color: #32373a;
+ }
+
+ .separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+  }
+  
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+  
+  .separator:not(:empty)::after {
+    margin-left: .25em;
+  }
+
+  .signInBtn{
+    border: none;
+    background-color:#ffffff;
+    text-decoration: underline;
+    font-size: 16px;
+  }
+  
